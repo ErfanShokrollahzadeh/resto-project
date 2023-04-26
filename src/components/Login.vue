@@ -2,6 +2,7 @@
   <img src="../assets/resto-logo.webp" class="logo" />
   <h1>Login</h1>
   <div class="login">
+    <!-- <input type="text" v-model="name" placeholder="Enter name" /> -->
     <input type="text" v-model="email" placeholder="Enter Email" />
     <input type="password" v-model="password" placeholder="Enter Password" />
     <button v-on:click="login">Login</button>
@@ -16,6 +17,7 @@ export default {
   name: "LoginPage",
   data() {
     return {
+      name: "",
       email: "",
       password: "",
     };
@@ -23,6 +25,7 @@ export default {
   methods: {
     async login() {
       let result = await axios.post("http://localhost:3000/user", {
+        // name: this.name,
         email: this.email,
         password: this.password,
       });
