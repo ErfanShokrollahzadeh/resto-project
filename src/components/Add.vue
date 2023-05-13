@@ -54,6 +54,8 @@ export default {
       });
       if (result.data.status === 200) {
         this.$router.push({ name: "Home" });
+      } else {
+        this.$router.push({ name: "Home" });
       }
       console.warn("result",result);
     },
